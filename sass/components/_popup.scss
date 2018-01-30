@@ -23,11 +23,28 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
     transition: all .4s .3s;
+
+
+    @include responsive(phone) {
+      width: 85%;
+    }
   }
 
   &__left {
     width: 33.333333%;
     display: table-cell;
+
+    @include responsive(tab-land) {
+      width: 100%;
+      height: 33.333333%;
+      display: block;
+      overflow: hidden;
+    }
+
+    @include responsive(phone) {
+      width: 0;
+      display: none;
+    }
   }
 
   &__right {
@@ -35,11 +52,31 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include responsive(tab-land) {
+      width: 100%;
+      height: 66.6666667%;
+      display: block;
+    }
+
+    @include responsive(phone) {
+      width: 100%;
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+
+    @include responsive(tab-land) {
+      width: 50%;
+      float: left;
+      display: inline;
+    }
+
+    @include responsive(phone) {
+      display: none;
+    }
   }
 
   &__text {
@@ -54,6 +91,10 @@
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto;
+
+    @include responsive(tab-land) {
+      margin-bottom: 1.2rem;
+    }
   }
 
   &:target {
